@@ -1,0 +1,41 @@
+The user's manual:
+
+ 
+
+controls that are available:  
+
+key:  "up"      -----  move frog up.
+
+      "left"    -----  move frog left.
+
+      "right"   -----  move frog right.
+ 
+      "down"   -----  move frog down.
+ 
+
+
+World (Objects) change:
+
+For each tick, the Enemy and the Friend move across the screen in their specified direction.
+
+If the player presses the key "left" or "right" or "up" or "down", the Frog will move in the direction of the given key.
+
+If no key is pressed, the Frog stays at the same position.
+
+If the Frog is on a Friend it moves with it.
+
+If the Frog hits the lava it loses a life.
+
+If the Frog hits the a car it loses a life. 
+
+ 
+
+Game Win:
+
+If the Frog reaches the other side of the game screen you win.
+ 
+
+
+Game Ends:
+
+If the Frog has no lives, you lose.

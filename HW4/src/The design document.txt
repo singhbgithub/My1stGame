@@ -1,0 +1,76 @@
+The Design Document:
+
+ 
+
+Design Diagram:
+
+Hint: The diagram might be a little bit big, please maximize the screen and look at it, Thanks.
+
+/*
+
+
+
+
+
+
+         --------------------------------
+         |            Frogger           |                  
+         --------------------------------                  ------------------------
+         | Frog                 froggy  |----------------->|          Frog        |
+         | ArrayList<Frenemy>   enemies |                  ------------------------
+         | ArrayList<Frenemy>   friends |                  | String     dir       |
+         | int                  lives   |                  | String     imagename |
+         --------------------------------                  | Point      loc       |----------
+                                                           ------------------------         |
+                                                                                            |
+                                                                                            |            ----------------
+         -----------------------                                                            ------------>|    Point     |
+         |       Frenemy       |                                                            |            ----------------
+         -----------------------                                                            |            | int       x  |
+         | String    dir       |                                                            |            | int       y  |
+         | String    imagename |                                                            |            ----------------
+         | Point     loc       |-------------------------------------------------------------
+         | int       speed     |
+         -----------------------
+                 / \                                        ----------------------
+                 ---                               ---------|       Enemy        |
+                  |                                |        ----------------------
+                  ---------------------------------|        
+                                                   |        ----------------------
+                                                   ---------|       Friend       |    
+                                                            ----------------------
+
+                   ------------------
+                   |      Pred      |
+                   ------------------
+                          / \
+                          ---
+                           |
+                -----------------------
+                |                     |
+     ---------------         -------------------
+     | OutOfBounds |         | OutOfBoundsFrog |
+     ---------------         -------------------
+
+
+*/
+
+ 
+
+Explanation:
+
+Our game world is called "Frogger." It contains a Frog (representing the player), two ArrayList<Frenemy> (representing enemies and friends),
+an int (representing lives), and constants width and height (representing the width and height of the game screen). 
+
+A Frog has a (String dir) that notes the direction in which the frog is moving. It also has the (String imagename) which refers to the name
+of the file to be drawn. The Frog also has (Point loc) denoting the frog's position on the game screen.
+
+A Point is a Posn and has an (int x) as the x-coordinate and an (int y) as the y-coordinate.
+
+A Frenemy is an abstract class that is either an Enemy or a Friend. A Frenemy has a (Point loc) which represents the position of the Frenemy. 
+The Frenemy also has an (int speed) that denotes the rate at which the Frenemy's position is changed every tick. The Frenemy's (String dir) 
+is the direction that affects which way the Frenemy moves each tick. The (String imagename) of a Frenemy references the file name of the 
+Frenemy's image to be drawn. 
+
+A Pred represents a predicate. OutOfBounds is a Pred that checks if a Frenemy is out of the game screen. OutOfBoundsFrog is a Pred that checks
+if a Frog is out of the game screen. 
